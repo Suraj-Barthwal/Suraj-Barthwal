@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suraj Barthwal | GitHub Profile</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh;background:#05070d;color:#e8eefc;
+  font-family:Inter,Segoe UI,Arial,sans-serif;overflow-x:hidden;
+}
+canvas{position:fixed;inset:0;z-index:0}
+.container{position:relative;z-index:2;max-width:1050px;margin:auto;padding:55px 22px}
+.card{
+  background:rgba(10,14,25,.72);border:1px solid rgba(110,150,255,.22);
+  border-radius:24px;backdrop-filter:blur(14px);
+  box-shadow:0 20px 70px rgba(0,0,0,.45);overflow:hidden;
+}
+.hero{text-align:center;padding:70px 25px 55px;position:relative}
+.glow{
+  position:absolute;width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(72,125,255,.24),transparent 68%);
+  left:50%;top:30px;transform:translateX(-50%);filter:blur(8px);
+}
+.badge{
+  display:inline-block;padding:8px 14px;border:1px solid #26385f;
+  border-radius:999px;color:#8eb2ff;font-size:13px;letter-spacing:1px;
+  animation:pulse 2s infinite;
+}
+h1{
+  margin-top:20px;font-size:clamp(42px,8vw,78px);letter-spacing:-4px;
+  background:linear-gradient(90deg,#fff,#8db3ff,#c9d7ff,#fff);
+  background-size:300%;-webkit-background-clip:text;color:transparent;
+  animation:gradient 5s linear infinite;
+}
+.subtitle{margin-top:12px;color:#91a0bc;font-size:18px}
+.typing{margin-top:28px;font-size:20px;color:#b9c9e8;min-height:30px}
+.cursor{display:inline-block;width:2px;height:22px;background:#7da7ff;margin-left:4px;animation:blink .7s infinite}
+.section{padding:35px 38px;border-top:1px solid rgba(110,150,255,.12)}
+.section h2{font-size:22px;margin-bottom:20px;color:#fff}
+.about{line-height:1.8;color:#aab6cc;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.item{
+  padding:20px;border:1px solid rgba(110,150,255,.15);border-radius:16px;
+  background:rgba(255,255,255,.025);transition:.3s;
+}
+.item:hover{transform:translateY(-6px);border-color:#5078d8;background:rgba(70,110,220,.08)}
+.item b{display:block;margin-bottom:8px;color:#dce6ff}
+.item span{font-size:13px;color:#8997b0;line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tag{
+  padding:9px 13px;border-radius:10px;background:#0c1324;
+  border:1px solid #1d2d4d;color:#9fb8eb;font-size:13px;
+}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.project{
+  position:relative;padding:22px;border-radius:17px;background:#080d18;
+  border:1px solid #172540;overflow:hidden;transition:.3s;
+}
+.project:before{
+  content:"";position:absolute;inset:-100%;background:conic-gradient(transparent,#557eff,transparent 25%);
+  animation:spin 5s linear infinite;z-index:-1;
+}
+.project:hover{transform:translateY(-5px)}
+.project h3{margin-bottom:9px}
+.project p{font-size:13px;color:#8997b0;line-height:1.6}
+.footer{text-align:center;padding:30px;color:#65738c;font-size:13px}
+.links{margin-top:18px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+a{
+  text-decoration:none;color:#a9c4ff;border:1px solid #24385e;
+  padding:10px 16px;border-radius:10px;transition:.25s
+}
+a:hover{background:#172744;transform:translateY(-2px)}
+@keyframes gradient{to{background-position:300%}}
+@keyframes blink{50%{opacity:0}}
+@keyframes pulse{50%{box-shadow:0 0 25px rgba(95,140,255,.25)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:750px){
+ .grid,.projects{grid-template-columns:1fr}
+ .section{padding:28px 22px}
+ h1{letter-spacing:-2px}
+}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<div class="container">
+<div class="card">
+
+<section class="hero">
+  <div class="glow"></div>
+  <div class="badge">AVAILABLE FOR BUILDING THINGS</div>
+  <h1>SURAJ BARTHWAL</h1>
+  <div class="subtitle">Computer Science Engineering • Backend • Systems</div>
+  <div class="typing"><span id="typed"></span><span class="cursor"></span></div>
+</section>
+
+<section class="section">
+<h2>About Me</h2>
+<p class="about">
+I build software around backend development, databases and operating-system concepts.
+Currently exploring systems-oriented projects, competitive programming and research-inspired engineering.
+I like projects where the implementation goes deeper than a basic CRUD application.
+</p>
+</section>
+
+<section class="section">
+<h2>Tech Stack</h2>
+<div class="tags">
+<span class="tag">C++</span><span class="tag">Java</span><span class="tag">Python</span>
+<span class="tag">SQL</span><span class="tag">Spring Boot</span><span class="tag">REST APIs</span>
+<span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">Git</span>
+<span class="tag">Linux</span><span class="tag">Docker</span><span class="tag">RocksDB</span>
+</div>
+</section>
+
+<section class="section">
+<h2>What I Work On</h2>
+<div class="grid">
+<div class="item"><b>Backend Systems</b><span>APIs, concurrency, services and performance-focused applications.</span></div>
+<div class="item"><b>Databases</b><span>Storage engines, indexing, compaction, recovery and database internals.</span></div>
+<div class="item"><b>Operating Systems</b><span>Processes, scheduling, deadlocks, memory and low-level systems concepts.</span></div>
+</div>
+</section>
+
+<section class="section">
+<h2>Featured Projects</h2>
+<div class="projects">
+<div class="project"><h3>ADOCX</h3><p>Research-inspired implementation exploring an ADOC approach on top of RocksDB with workload testing and performance analysis.</p></div>
+<div class="project"><h3>HarmonyStream</h3><p>Java desktop music application with search, playback, queue management, metadata and concurrent task handling.</p></div>
+<div class="project"><h3>MotoresQ</h3><p>Location-based fuel and mechanic discovery system using maps, routing logic and a C++ backend.</p></div>
+<div class="project"><h3>LeetCode Journey</h3><p>Continuous DSA practice covering algorithms, data structures and problem-solving patterns.</p></div>
+</div>
+</section>
+
+<section class="section">
+<h2>Connect</h2>
+<div class="links">
+<a href="https://github.com/Suraj-Barthwal" target="_blank">GitHub</a>
+<a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+</div>
+</section>
+
+<div class="footer">Built with HTML • CSS • JavaScript • Keep building.</div>
+</div>
+</div>
+
+<script>
+const canvas=document.getElementById("stars"),ctx=canvas.getContext("2d");
+let w,h,stars=[];
+function resize(){
+ w=canvas.width=innerWidth;h=canvas.height=innerHeight;
+ stars=Array.from({length:110},()=>({x:Math.random()*w,y:Math.random()*h,
+ r:Math.random()*1.5+.2,s:Math.random()*.35+.08}));
+}
+function draw(){
+ ctx.clearRect(0,0,w,h);
+ for(const p of stars){
+   p.y+=p.s;if(p.y>h)p.y=0;
+   ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+   ctx.fillStyle="rgba(150,180,255,.65)";ctx.fill();
+ }
+ requestAnimationFrame(draw);
+}
+addEventListener("resize",resize);resize();draw();
+
+const phrases=[
+ "Building backend systems.",
+ "Exploring database internals.",
+ "Learning operating systems.",
+ "Solving DSA problems.",
+ "Turning research papers into projects."
+];
+let i=0,j=0,deleting=false;
+const el=document.getElementById("typed");
+function type(){
+ const word=phrases[i];
+ el.textContent=deleting?word.slice(0,j--):word.slice(0,j++);
+ if(!deleting && j>word.length){deleting=true;setTimeout(type,1300);return}
+ if(deleting && j<0){deleting=false;i=(i+1)%phrases.length;j=0}
+ setTimeout(type,deleting?45:75);
+}
+type();
+</script>
+</body>
+</html>
